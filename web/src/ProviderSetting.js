@@ -1360,7 +1360,7 @@ export function getProviderAzureApiVersionOptions() {
 }
 
 export function getQuickSetupModelTypes() {
-  return ["OpenAI", "Claude", "Gemini", "DeepSeek", "Grok", "Ollama", "OpenRouter", "Mistral", "MiniMax", "Azure", "OpenAI Compatible", "Alibaba Cloud", "Moonshot", "Silicon Flow", "Volcano Engine", "Baidu Cloud", "Amazon Bedrock", "OpenCode"];
+  return ["OpenAI", "Claude", "Gemini", "DeepSeek", "Grok", "Ollama", "OpenRouter", "Mistral", "MiniMax", "Azure", "OpenAI Compatible", "Alibaba Cloud", "Moonshot", "Silicon Flow", "Volcano Engine", "Baidu Cloud", "Amazon Bedrock", "Hugging Face", "iFlytek", "ChatGLM", "Cohere", "Baichuan", "StepFun", "Tencent Cloud", "Yi", "GitHub", "Writer", "Local", "OpenCode"];
 }
 
 export function getModelProviderMetadata(type) {
@@ -1382,6 +1382,17 @@ export function getModelProviderMetadata(type) {
     "Volcano Engine": {desc: "ByteDance AI platform", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "doubao-seed-2-0-pro-260215"},
     "Baidu Cloud": {desc: "ERNIE Bot models", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "ernie-5.0"},
     "Amazon Bedrock": {desc: "Claude, Llama on AWS", needsApiKey: true, needsUrl: false, needsClientId: true, needsRegion: true, defaultSubType: "claude"},
+    "Hugging Face": {desc: "Llama, Falcon, open models", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "meta-llama/Llama-2-7b"},
+    "iFlytek": {desc: "Spark X2, Spark Max...", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "spark-x2"},
+    "ChatGLM": {desc: "GLM-4, ChatGLM...", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "glm-4"},
+    "Cohere": {desc: "Command, Command Light", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "command"},
+    "Baichuan": {desc: "Baichuan4, Baichuan3...", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "Baichuan4-Turbo"},
+    "StepFun": {desc: "Step-2, Step-1...", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "step-2-16k"},
+    "Tencent Cloud": {desc: "Hunyuan models", needsApiKey: true, needsUrl: true, needsClientId: false, needsRegion: false, defaultSubType: "hunyuan-pro", urlPlaceholder: "https://hunyuan.tencentcloudapi.com"},
+    "Yi": {desc: "Yi Lightning, Yi Vision", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "yi-lightning"},
+    "GitHub": {desc: "GitHub Models catalog", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "gpt-4o"},
+    "Writer": {desc: "Palmyra X5, X4...", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: "palmyra-x5"},
+    "Local": {desc: "Self-hosted model endpoint", needsApiKey: true, needsUrl: true, needsClientId: false, needsRegion: false, defaultSubType: "custom-model", urlPlaceholder: "http://localhost:8000/v1"},
     "OpenCode": {desc: "Delegate coding to OpenCode agent", needsApiKey: false, needsUrl: true, needsClientId: false, needsRegion: false, defaultSubType: "", urlPlaceholder: "http://localhost:4096", defaultUrl: "http://localhost:4096"},
   };
   return metadata[type] || {desc: "", needsApiKey: true, needsUrl: false, needsClientId: false, needsRegion: false, defaultSubType: ""};
